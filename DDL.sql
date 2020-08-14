@@ -97,3 +97,29 @@ foreign key(candidate_id) references lms.fellowship_candidate(fellowship_candida
 );
 
 describe lms.candidate_bank_details;
+
+create table lms.candidate_qualification(
+candidate_qualification_id int auto_increment primary key,
+candidate_id int not null,
+diploma varchar(100) not null,
+degree_name varchar(100) not null,
+is_degree_name_verified boolean not null,
+employee_decipline varchar(20) not null,
+is_employee_decipline_verified boolean not null,
+passing_year varchar(15) not null,
+is_passing_year_verified boolean not null,
+aggregate_percentage varchar(10) not null,
+final_year_percentage varchar(10) not null,
+is_final_year_percentage_verified boolean not null,
+training_institute varchar(100) not null,
+is_training_institute_verified boolean not null,
+training_duration_month varchar(100) not null,
+is_training_duration_month_verified boolean not null,
+other_training varchar(200) not null,
+is_other_training_verified boolean not null,
+creator_stamp datetime not null,
+creator_user varchar(45) not null,
+foreign key (candidate_id) references lms.fellowship_candidate(fellowship_candidate_id)
+);
+
+describe lms.candidate_qualification;
