@@ -123,3 +123,16 @@ foreign key (candidate_id) references lms.fellowship_candidate(fellowship_candid
 );
 
 describe lms.candidate_qualification;
+
+create table lms.candidate_document (
+id int primary key auto_increment,
+candidate_id int not null,
+doc_type varchar(200) not null,
+doc_path varchar(200) not null,
+status varchar(15) not null,
+creator_stamp datetime not null,
+creator_user varchar(45) not null,
+foreign key(candidate_id) references lms.fellowship_candidate(fellowship_candidate_id)
+);
+
+describe lms.candidate_document;
