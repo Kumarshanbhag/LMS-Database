@@ -170,3 +170,21 @@ creator_user varchar (50) not null
 );
 
 describe lms.tech_type;
+
+create table lms.maker_program (
+maker_program_id int primary key auto_increment,
+program_name varchar(50) not null,
+program_type varchar(50) not null,
+program_link varchar(100) not null,
+tech_stack_id int not null,
+tech_type_id int not null,
+is_progam_approved boolean not null,
+description varchar(50) not null,
+status boolean not null,
+creator_stamp datetime not null,
+creator_user varchar (50) not null,
+foreign key(tech_stack_id) references lms.tech_stack(tech_stack_id),
+foreign key(tech_type_id) references lms.tech_type(tech_type_id)
+);
+
+describe lms.maker_program;
