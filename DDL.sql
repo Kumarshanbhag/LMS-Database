@@ -200,3 +200,16 @@ creator_user varchar (50) not null
 );
 
 describe lms.lab;
+
+create table lms.mentor (
+mentor_id int primary key auto_increment,
+name varchar(50) not null,
+mentor_type varchar(10) not null,
+lab_id int not null,
+status boolean not null,
+creator_stamp datetime not null,
+creator_user varchar (50) not null,
+foreign key(lab_id) references lms.lab(id)
+);
+
+describe lms.mentor;
