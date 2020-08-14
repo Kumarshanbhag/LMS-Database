@@ -188,3 +188,15 @@ foreign key(tech_type_id) references lms.tech_type(tech_type_id)
 );
 
 describe lms.maker_program;
+
+create table lms.lab (
+id int primary key auto_increment,
+name varchar(50) not null,
+location varchar(100) not null,
+address varchar(200) not null,
+status boolean not null,
+creator_stamp datetime not null,
+creator_user varchar (50) not null
+);
+
+describe lms.lab;
