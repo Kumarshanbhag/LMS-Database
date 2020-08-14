@@ -78,3 +78,22 @@ create table lms.fellowship_candidate (
 );
 
 describe lms.fellowship_candidate;
+
+create table lms.candidate_bank_details(
+candidate_bank_details_id int auto_increment primary key,
+candidate_id int not null,
+name varchar(45) not null,
+account_number varchar(30) not null,
+is_account_number_verified boolean not null,
+ifsc_code varchar(20) not null,
+ifsc_code_verified boolean not null,
+pan_number varchar (15) not null,
+pan_number_verified boolean not null,
+addhaar_number varchar(15) not null,
+addhaar_number_verified boolean not null,
+creator_stamp datetime not null,
+creator_user varchar(45) not null,
+foreign key(candidate_id) references lms.fellowship_candidate(fellowship_candidate_id)
+);
+
+describe lms.candidate_bank_details;
