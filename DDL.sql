@@ -14,4 +14,6 @@ creator_stamp DATETIME not null,
 creator_user varchar (50) not null
 );
 
-describe `lms`.`user_details`;
+describe lms.user_details;
+
+alter table lms.user_details modify user_id int not null auto_increment; 
