@@ -160,3 +160,13 @@ creator_user varchar(100) not null
 );
 
 describe lms.tech_stack;
+
+create table lms.tech_type (
+tech_type_id int primary key auto_increment,
+type_name varchar (15) not null,
+current_status varchar (50) not null,
+creator_stamp datetime not null,
+creator_user varchar (50) not null
+);
+
+describe lms.tech_type;
